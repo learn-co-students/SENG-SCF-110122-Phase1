@@ -119,7 +119,7 @@ var dogCat = 'tiger rose'
 // variables defined with const can't be reassigned 
 const bestDogCat = 'tr'
 
-// variables defined with lets can be reassigned 
+// variables defined with let can be reassigned 
 
 let animal = 'tom'
 animal = 'tiger rose'
@@ -136,8 +136,10 @@ if(true == true) {
 
 // if...else will execute the first block if the condition is true, else it will execute the second blog
 
-if(dog == 'tr'){
-    console.log('tr wins best dog contest!')
+let dog = 'tr'
+
+if(dog === 'tr'){
+    console.log(`${dog} wins best dog contest!`)
 } else {
     console.log(`${dog} is a good dog`)
 };
@@ -166,7 +168,7 @@ let teacher = 'shelby'
 
 // local(function scope): only accessible within the function that its been defined in
 
-function cuteCate(){
+function (){
     let teacher = 'shelby'
 }
 
