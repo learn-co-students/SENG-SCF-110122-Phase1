@@ -4,6 +4,7 @@
 - Access elements from arrays
 - Add elements to arrays
 - Remove elements from arrays
+- Looping with for (classic) and for of (ES6)
 - Use forEach to loop through arrays
 - Use map to return a transform arrays
 - Use filter and find to find specific elements (depending on how y'all are doing)
