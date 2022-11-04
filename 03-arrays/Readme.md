@@ -4,6 +4,7 @@
 - Access elements from arrays
 - Add elements to arrays
 - Remove elements from arrays
+- Looping with for (classic) and for of (ES6)
 - Use forEach to loop through arrays
 - Use map to return a transform arrays
 - Use filter and find to find specific elements (depending on how y'all are doing)
@@ -42,7 +43,7 @@ arr[0]
 //Adding items to arrays
 arr.push(4)
 arr.unshift(0)
-books.splice(1, 0,, 6)
+books.splice(1, 0, 6)
 
 //Removing items from arrays
 arr.pop()
