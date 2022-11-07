@@ -20,15 +20,16 @@ obj.favToys = ['tennis ball', 'dog friends']
 obj['age'] = 5
 
 //Bracket notation allows variables to be passed in for keys
-let owner = 'shelbs'
-obj[owner] // value would display as 'shelbs'
+let owner = 'owner'
+obj[owner] // the owner property in this case would be 'owner'. we will see this bracket notation more when we start iterating over data
+obj[owner] = 'shelbs'
 
 // {username: 'tiger rose', faveFood:{food:'salmon', serving: 100}, faveToys:['tennis ball', 'dog friends'], age:5}
 
 //Accessing properties 
 //Properties can be access through dot or bracket notation
 obj.username //tiger rose
-obj['owner'] // shelbs
+obj['owner'] // or obj[owner] => shelbs
 
 //Accessing nested properties
 obj.favToys[1] // 'dog friends'
