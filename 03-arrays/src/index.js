@@ -91,7 +91,7 @@ const customers =  ['Thomas Haden Church', 'John Leguizamo', 'Jason Segel', 'Kev
 const upcaseCustomers = customers.map((person) => person.toUpperCase())
 
 // this is written as a function
-const upcaseCustomers2 = () => customers.map((person) => person.toUpperCase())
+const upcaseCustomers2 = (arr) => arr.map((person) => person.toUpperCase())
 
 
 // 2. Write functions that can transform books elements. 
@@ -131,7 +131,7 @@ function noAuthorAgain(booksArry) {
 
 
 // - Remove the title
-const noTitle = () => books.map(book => book.split(" by ")[1])
+const noTitle = (arr) => arr.map(book => book.split(" by ")[1])
 
 // - Remove the customer's last name
 const firstNames = () => customers.map(person => person.split(" ")[0])
@@ -145,12 +145,16 @@ const firstNames = () => customers.map(person => person.split(" ")[0])
 
 const input = prompt("Please enter a book to search").toLowerCase()
 
-const findBooks = () => books.filter(checkForMatch)
+const findBooks = (arr) => arr.filter(checkForMatch)
 
 // 4. Write a function that returns a specific book by search term. 
 // .find() returns the first match (NOT an array)
 
-const findOneBook = () => books.find(checkForMatch)
+const findOneBook = (arr) => arr.find(checkForMatch)
 
 const checkForMatch = (el) => el.toLowerCase().includes(input)
 
+
+function runFunc(data, cb) {
+  return cb(data)
+}
