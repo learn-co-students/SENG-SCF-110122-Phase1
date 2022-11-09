@@ -10,7 +10,7 @@ const bookStore = {
             title: 'Eloquent JavaScript: A Modern Introduction to Programming',
             author: 'Marjin Haverbeke',
             price: 10.00,
-            reviews: [{userID: 1, content:'Good book, but not great for new coders'}],
+            reviews: [{userID: 1, content:'Good book, but not great for new coders'},{userID: 2, content:'My absolute favoritest book ever'}],
             inventory: 10,
             imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
             
