@@ -1,0 +1,19 @@
+.poke-name {
+  color: blueviolet;
+  font-style: italic;
+  font-size: 55px;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 51%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+h3 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+li {
+  color: pink;
+}
