@@ -12,22 +12,22 @@ const pokePic = poke.sprites.other["official-artwork"].front_default;
 
 // Once you have successfully targeted the name and url, uncomment the lines of code below!!
 
-// const imgTag = document.createElement("img");
-// imgTag.src = pokePic;
-// imgTag.alt = `${pokeName} pic`;
-// imgTag.style.height = "255px";
+const imgTag = document.createElement("img");
+imgTag.src = pokePic;
+imgTag.alt = `${pokeName} pic`;
+imgTag.style.height = "255px";
 
-// const nameEl = document.createElement('h2')
-// nameEl.innerText = pokeName
-// nameEl.className = "poke-name"
+const nameEl = document.createElement('h2')
+nameEl.innerText = pokeName
+nameEl.className = "poke-name"
 
 
-// const ul = document.createElement("ul")
+const ul = document.createElement("ul")
 
-// for(let ability of abilities ) {
-//   const li = document.createElement("li")
-//   li.innerText = ability
-//   ul.append(li)
-// }
+for(let ability of abilities ) {
+  const li = document.createElement("li")
+  li.innerText = ability
+  ul.append(li)
+}
 
-// document.body.append(imgTag, nameEl, ul);
+document.body.append(imgTag, nameEl, ul);
