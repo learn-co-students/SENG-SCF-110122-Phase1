@@ -1,0 +1,139 @@
+:root{
+    --hf-green: #103f22;
+}
+
+body{
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-image: url("assets/books.png");
+    height: 13%;
+    opacity: 0.8;
+    border-top: solid;
+    border-width: 30px;
+    border-color: var(--hf-green);
+
+}
+header div h1{
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 2px 4px #252525;
+    font-family: Verdana;
+    font-style: italic;
+}
+
+@media screen  and (max-width: 465px) {
+    header div h1 {
+        font-size: 27px;
+    }
+}
+
+@media screen  and (max-width: 275px) {
+    header {
+        height: 24%;
+        padding: 0 10px;
+    }
+    header div h1 {
+        font-size: 22px;
+    }
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.list ul{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* border-top: solid;
+    border-width:thin medium thick 10px; */
+}
+
+.list-li{
+    background-color: #e3e0e0;
+    list-style: none;
+    width:200px;
+    border: 0.5px solid #c9c8c8;
+    border-radius: 2px;
+    box-shadow: 8px 8px 2px 2px #c9c8c8;
+    padding: 5px;
+    margin:10px;
+ 
+}
+.list-li img{
+    width:190px;
+}
+.list-li button{
+    width:190px;
+    margin: 15px 5px 15px 5px;
+    border: none;
+    background-color: #fce043;
+    color: rgb(255, 255, 255);
+    padding:3px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#form-wrapper{
+    border-top: solid;
+    border-bottom: solid;
+    border-width:thin;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+label{
+    font-family: Verdana;
+}
+
+input{
+  height: 40px;
+  width: 100%;
+  margin: 3px;
+}
+input[type=submit]{
+    border: none;
+    background-color: var(--hf-green);
+    opacity: 0.8;
+    color: rgb(255, 255, 255);
+    padding:3px;
+    font-size: large;
+    font-weight: bold;
+}
+form{
+    margin: 10px auto 10px auto;
+    width: 400px; 
+    display: flex;
+    flex-direction: column;
+
+}
+
+footer{
+    background-color: var(--hf-green);
+    opacity: 0.8;
+    text-align: center;
+    padding: 12px;
+    color: aliceblue;
+}
+
+.book-inventory-form{
+    width: 100%;
+}
+
+.book-inventory-form input{
+    height: 30px;
+    width: 100%;
+    margin: 3px;
+}
