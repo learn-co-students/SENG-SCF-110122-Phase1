@@ -1,7 +1,7 @@
 const bookStore = {
-    location: "Seattle",
-    address:'333 st ne Seattle wa 99999',
-    number: 9999999999,
+    location: "New York",
+    address:'500 Broadway, New York NY 10019',
+    number: "212-456-7890",
     name: 'Easley\'s Technical Books',
     hours: 'Monday - Friday 9am - 6pm',
     inventory: [
