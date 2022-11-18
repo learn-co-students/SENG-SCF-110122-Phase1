@@ -1,10 +1,36 @@
-//Build header => create a function
-document.querySelector("h1").textContent = bookStore.name;
+function getBooks() {
+  fetch('http://localhost:3000/books')
+  .then((response) => response.json()) // reminder: response is implicit because of one line arrow function
+  .then(returnedData => returnedData.forEach(function(bookObj) {
+    renderOneBook(bookObj) // in this case we don't necessarily need a return value. if we were using getBooks() elsewhere and needed a return we would return... something.
+  }))
+}
 
-//Build footer => create a function
-document.querySelector("footer div").textContent = bookStore.name;
-document.getElementById("address").textContent = bookStore.address;
-document.querySelectorAll("footer div")[2].textContent = bookStore.hours;
+getBooks()
+
+function getStore(num) {
+  fetch(`http://localhost:3000/stores/${num}`)
+  .then((response) => response.json())
+  .then(returnedData => {
+    renderHeader(returnedData) // reminder that if we returned this function, the function on line 16 wouldn't run. try it!
+    renderFooter(returnedData)
+  })
+}
+
+getStore(1) // dynamically rendering store by id
+
+//Build header => create a function will be invoked inside of fetch
+// create function, parameter
+function renderHeader(store){
+  document.querySelector("h1").textContent = store.name;
+}
+
+//Build footer => create a function that will be invoked inside of fetch
+function renderFooter(store){
+  document.querySelector("footer div").textContent = store.name;
+  document.getElementById("address").textContent = store.address;
+  document.querySelectorAll("footer div")[2].textContent = store.hours;
+}
 
 //Clear book list
 document.querySelector("#book-list li").remove();
@@ -25,7 +51,7 @@ const renderOneBook = (book) => {
   img.src = book.imageUrl;
   li.className = "list-li";
 
-  //Event Listeners
+  //Event Listeners => delete button
   btn.addEventListener("click", () => li.remove());
 
   li.append(h3, pAuthor, pPrice, img, btn);
