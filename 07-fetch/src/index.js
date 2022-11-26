@@ -1,16 +1,23 @@
+const URL = 'http://localhost:3000'
+
+function fetchFactory(url) {
+  return fetch(url).then(response => response.json())
+  // reminder: return value of response.json() is implicit because of one line arrow function
+}
+
+
 function getBooks() {
-  fetch('http://localhost:3000/books')
-  .then((response) => response.json()) // reminder: response is implicit because of one line arrow function
+  fetchFactory(`${URL}/books`)
   .then(returnedData => returnedData.forEach(function(bookObj) {
-    renderOneBook(bookObj) // in this case we don't necessarily need a return value. if we were using getBooks() elsewhere and needed a return we would return... something.
+    renderOneBook(bookObj) // in this case we don't necessarily need a return value. if we were using getBooks() elsewhere and needed a return value we would return... something.
   }))
 }
 
 getBooks()
 
 function getStore(num) {
-  fetch(`http://localhost:3000/stores/${num}`)
-  .then((response) => response.json())
+  fetchFactory(`${URL}/stores/${num}`)
+  
   .then(returnedData => {
     renderHeader(returnedData) // reminder that if we returned this function, the function on line 16 wouldn't run. try it!
     renderFooter(returnedData)
