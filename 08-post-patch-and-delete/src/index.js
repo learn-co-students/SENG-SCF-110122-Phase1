@@ -37,7 +37,7 @@ const renderOneBook = (book) => {
   li.className = "list-li";
 
   //Event Listener delete book. I need book id for fetch
-  btn.addEventListener("click", () => deleteBook(book.id));
+  btn.addEventListener("click", (e) => deleteBook(book.id, e));
 
   // Event Listener update book inventory. Again, I need book id for fetch
   inventory.addEventListener('change', (e) => updateBook(book.id, e))
@@ -53,15 +53,14 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
   //event-param.what-the-event-listener-is-called-on.attribute-like-name-or-id.value
   // TODO: dynamically create our book, with getElementsByTagName
   const book = {
-    title: e.target.title.value,
-    author: e.target.author.value,
-    price: e.target.price.value,
-    imageUrl: e.target.imageUrl.value,
-    inventory: e.target.inventory.value,
-    reviews: [],
-  };
+    reviews: []
+  }
+  const inputs = e.target.getElementsByTagName("input")
+  Array.from(inputs).forEach(tag => book[tag.name] = tag.value)
   // renderOneBook(book)
   createOneBook(book);
+  //clear my form
+  e.target.reset()
 });
 
 //READ: GET - 1
@@ -92,18 +91,24 @@ function createOneBook(book) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Accept: "application/json"
     },
     body: JSON.stringify(book),
   })
     .then((r) => r.json())
-    .then((returnedBook) => renderOneBook(returnedBook));
+    .then((returnedBook) => {
+      // console.log(returnedBook)
+      renderOneBook(returnedBook)
+    });
 }
 
 //DELETE: DELETE
-function deleteBook(id) {
+function deleteBook(id, e) {
   fetch(`http://localhost:3000/books/${id}`, {
     method: "DELETE"
-  });
+  })
+  .then(() => e.target.closest("li").remove());
+  // e.target.parentNode.remove()
 }
 
 //UPDATE: PATCH
